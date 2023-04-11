@@ -218,51 +218,60 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 */
 
 
-function rastgeleTatlar(/*kod buraya*/){
+function rastgeleTatlar(orijinalTatlar, yeniTatlar1, mevsimlikTatlar, bolgeselTatlar){
+
+  const tumTatlar = orijinalTatlar.concat(yeniTatlar1,mevsimlikTatlar,bolgeselTatlar);
+  let secilenler=[];
+  while (secilenler.length<25) {
+    const rastgeleIndex = Math.floor(Math.random()*tumTatlar.length);
+    if (!secilenler.includes(tumTatlar[rastgeleIndex])) {
+      secilenler.push(tumTatlar[rastgeleIndex]);
+    }
+  }
   /*kod buraya*/
-}
+} 
 
 
 
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const yeniTatlar = [
-//   "Badem",
-//   "Ballı Badem",
-//   "Fıstık Ezmesi",
-//   "Profiterol",
-//   "Madlen Çikolata"
-// ]
+ const yeniTatlar1 = [
+   "Badem",
+   "Ballı Badem",
+   "Fıstık Ezmesi",
+   "Profiterol",
+   "Madlen Çikolata"
+ ]
 
-// const mevsimlikTatlar = [
-// "Pekan",
-// "Kaju",
-// "Çikolatalı Mousse",
-// "Fransız Vanilyası",
-// "Yumurta",
-// "Alman çikolatası",
-// "Kek üzerine krema",
-// "Hindistan Cevizi",
-// "Kaymaklı Biskuvi",
-// "Beyaz Çikolata",
-// "Mango"
-// ]
+ const mevsimlikTatlar = [
+ "Pekan",
+ "Kaju",
+ "Çikolatalı Mousse",
+ "Fransız Vanilyası",
+ "Yumurta",
+ "Alman çikolatası",
+ "Kek üzerine krema",
+ "Hindistan Cevizi",
+ "Kaymaklı Biskuvi",
+ "Beyaz Çikolata",
+ "Mango"
+ ]
 
-// const bolgeselTatlar = [
-// "Kaymak",
-// "Karpuz",
-// "Karadut",
-// "Turunç",
-// "Portakal",
-// "Yogurt",
-// "Krem Peynir",
-// "Kakao",
-// "Karamel macchiato",
-// "Kuru üzüm",
-// "Peynir",
-// "Karamel"
-// ]
-
+ const bolgeselTatlar = [
+ "Kaymak",
+ "Karpuz",
+ "Karadut",
+ "Turunç",
+ "Portakal",
+ "Yogurt",
+ "Krem Peynir",
+ "Kakao",
+ "Karamel macchiato",
+ "Kuru üzüm",
+ "Peynir",
+ "Karamel"
+]
+console.log(rastgeleTatlar(orijinalTatlar, yeniTatlar1, mevsimlikTatlar, bolgeselTatlar));
 
 /* Lütfen bu satırın altındaki hiçbir şeyi değiştirmeyin */
 function sa(){
